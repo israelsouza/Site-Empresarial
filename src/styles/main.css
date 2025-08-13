@@ -1,0 +1,191 @@
+/* ===== IMPORT STYLES ===== */
+/* Base styles */
+@import url("./variables.css");
+@import url("./base.css");
+
+/* Component styles */
+@import url("./components/header.css");
+@import url("./components/home.css");
+@import url("./components/about.css");
+@import url("./components/services.css");
+@import url("./components/cta.css");
+@import url("./components/contact.css");
+@import url("./components/footer.css");
+
+/* ===== ADDITIONAL FORM STYLES ===== */
+.field-error {
+  color: #dc3545;
+  font-size: var(--smaller-font-size);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.contato__input.error,
+.contato__textarea.error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* ===== MOBILE FIXES ===== */
+@media screen and (max-width: 768px) {
+  /* Fix menu positioning on mobile */
+  .nav__menu {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Improve button touch targets */
+  .nav__toggle,
+  .nav__close {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Fix text alignment on mobile */
+  .home__data {
+    text-align: center;
+  }
+
+  /* Better spacing for mobile */
+  .section {
+    padding: 2.5rem 0 1.5rem;
+  }
+}
+
+/* ===== LOADING STATES ===== */
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* ===== ANIMATION IMPROVEMENTS ===== */
+.home__data,
+.home__img {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.home__data.animate-fadeInLeft,
+.home__img.animate-fadeInRight {
+  opacity: 1;
+}
+
+/* Staggered animations for cards */
+.sobre__card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.sobre__card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.sobre__card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.sobre__card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.servico__card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.servico__card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.servico__card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.servico__card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.servico__card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .home__data,
+  .home__img,
+  .sobre__card,
+  .servico__card,
+  .contato__card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Custom focus for nav elements */
+.nav__link:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Remove focus outline from toggle/close when not keyboard navigation */
+.nav__toggle:focus:not(:focus-visible),
+.nav__close:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000000;
+    --primary-color-alt: #333333;
+    --gray-color: #666666;
+    --dark-color: #000000;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .scrollup,
+  .nav__toggle,
+  .nav__close,
+  .button,
+  .contato__form {
+    display: none !important;
+  }
+
+  .home,
+  .sobre,
+  .servicos,
+  .contato,
+  .footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}

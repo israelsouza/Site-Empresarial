@@ -1,0 +1,90 @@
+/* ===== SERVIÇOS ===== */
+.servicos__container {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.servico__card {
+  background-color: var(--white-color);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.servico__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.servico__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.servico__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--secondary-color), #553C9A);
+  color: var(--white-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  margin-bottom: var(--mb-1-5);
+  transition: var(--transition);
+}
+
+.servico__card:hover .servico__icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.servico__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--dark-color);
+}
+
+.servico__description {
+  color: var(--gray-color);
+  line-height: 1.7;
+}
+
+/* ===== SERVICES RESPONSIVE ===== */
+@media screen and (max-width: 992px) {
+  .servicos__container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .servicos__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .servico__card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .servico__card {
+    padding: 1.5rem 1rem;
+  }
+
+  .servico__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}

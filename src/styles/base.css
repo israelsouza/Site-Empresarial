@@ -1,0 +1,268 @@
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+h1, h2, h3, h4 {
+  color: var(--dark-color);
+  font-weight: var(--font-semi-bold);
+  font-family: var(--title-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== REUSABLE CSS CLASSES ===== */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.section {
+  padding: 5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--dark-color);
+  text-align: center;
+  margin-bottom: var(--mb-0-75);
+  font-family: var(--title-font);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--gray-color);
+  text-align: center;
+  margin-bottom: var(--mb-3);
+}
+
+.section__header {
+  margin-bottom: var(--mb-3);
+}
+
+/* ===== BUTTONS ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  background-color: var(--primary-color-alt);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 21, 56, 0.3);
+}
+
+.button--secondary {
+  background-color: var(--secondary-color);
+}
+
+.button--secondary:hover {
+  background-color: #553C9A;
+}
+
+.button__icon {
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.button:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+
+/* ===== SCROLL UP ===== */
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: var(--transition);
+}
+
+.scrollup:hover {
+  background-color: var(--primary-color-alt);
+  opacity: 1;
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+
+/* Show scroll */
+.show-scroll {
+  bottom: 5rem;
+}
+
+/* ===== SCROLL BAR ===== */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-alt);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Animation states */
+.home__data,
+.home__img,
+.sobre__card,
+.servico__card,
+.contato__card {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.home__data.animate-fadeInLeft,
+.home__img.animate-fadeInRight,
+.sobre__card.animate-fadeInUp,
+.servico__card.animate-fadeInUp,
+.contato__card.animate-fadeInUp {
+  opacity: 1;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 3rem 0 2rem;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 480px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .section {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .button {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--small-font-size);
+  }
+}
+
+/* For extra small devices */
+@media screen and (max-width: 350px) {
+  .section__title {
+    font-size: 1.5rem;
+  }
+}

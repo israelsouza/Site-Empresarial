@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Haline Cordeiro - Consultora e mentora em negócios de sucesso. Soluções personalizadas que impulsionam o crescimento sustentável de empresas e pessoas."
+    />
+    <meta
+      name="keywords"
+      content="consultoria, mentoria, negócios, liderança, gestão, sustentabilidade, ESG"
+    />
+    <meta name="author" content="Haline Cordeiro" />
+
+    <!-- Open Graph Tags -->
+    <meta
+      property="og:title"
+      content="Haline Cordeiro - Consultora e Mentora em Negócios de Sucesso"
+    />
+    <meta
+      property="og:description"
+      content="Soluções personalizadas que impulsionam o crescimento sustentável de empresas e pessoas."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://halinecordeiro.com" />
+    <meta property="og:image" content="./assets/images/hc-image-1.png" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Haline Cordeiro - Consultora e Mentora"
+    />
+    <meta
+      name="twitter:description"
+      content="Soluções personalizadas para o crescimento sustentável de empresas."
+    />
+    <meta name="twitter:image" content="./assets/images/hc-image-1.png" />
+
+    <title>Haline Cordeiro - Consultora e Mentora em Negócios de Sucesso</title>
+
+    <!-- Preconnect for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./src/styles/main.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/images/Assinatura Preta.png"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Haline Cordeiro",
+        "jobTitle": "Consultora e Mentora em Negócios",
+        "description": "CEO da H2 Assessoria & Educação, especialista em gestão de pessoas e negócios sustentáveis",
+        "url": "https://halinecordeiro.com",
+        "telephone": "(85) 98953-2400",
+        "email": "adm.halinecordeiro@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fortaleza",
+          "addressRegion": "CE",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/halinecordeiro",
+          "https://instagram.com/halinecordeiro"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Loading indicator -->
+    <div
+      id="loading"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        "
+      >
+        <div
+          style="
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #8b1538;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          "
+        ></div>
+        <p style="color: #8b1538; font-family: 'Poppins', sans-serif">
+          Carregando...
+        </p>
+      </div>
+    </div>
+
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Skip to main content (Accessibility) -->
+    <a
+      href="#main"
+      class="skip-link"
+      style="
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #8b1538;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 100;
+        transition: top 0.3s;
+      "
+      >Pular para o conteúdo principal</a
+    >
+
+    <style>
+      .skip-link:focus {
+        top: 6px;
+      }
+    </style>
+
+    <!-- Content will be dynamically generated by JavaScript -->
+    <div id="app">
+      <!-- Header will be inserted here -->
+      <div id="header-container"></div>
+
+      <!-- Main content -->
+      <main id="main-content">
+        <!-- Home section will be inserted here -->
+        <div id="home-container"></div>
+
+        <!-- About section will be inserted here -->
+        <div id="about-container"></div>
+
+        <!-- Services section will be inserted here -->
+        <div id="services-container"></div>
+
+        <!-- Contact section will be inserted here -->
+        <div id="contact-container"></div>
+      </main>
+
+      <!-- Footer will be inserted here -->
+      <div id="footer-container"></div>
+
+      <!-- Scroll up button -->
+      <a href="#home" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup__icon"></i>
+      </a>
+    </div>
+
+    <!-- Main JavaScript Module -->
+    <script type="module" src="./src/main.js"></script>
+
+    <!-- Hide loading when page is ready -->
+    <script>
+      window.addEventListener("load", () => {
+        const loading = document.getElementById("loading");
+        setTimeout(() => {
+          loading.style.opacity = "0";
+          setTimeout(() => {
+            loading.style.display = "none";
+          }, 500);
+        }, 1000);
+      });
+    </script>
+
+    <!-- Error handling -->
+    <script>
+      window.addEventListener("error", (e) => {
+        console.error("Application error:", e.error);
+      });
+
+      window.addEventListener("unhandledrejection", (e) => {
+        console.error("Unhandled promise rejection:", e.reason);
+      });
+    </script>
+  </body>
+</html>
